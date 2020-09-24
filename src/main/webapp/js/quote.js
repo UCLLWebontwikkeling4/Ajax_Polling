@@ -50,8 +50,7 @@ function showQuotes () {
 				let quoteText = document.createTextNode(quote.text); // kan ook quote["text"]
 				quoteParagraph.appendChild(quoteText);
 				quoteDiv.appendChild(quoteParagraph);
-			}
-			else {
+			} else {
 				let quoteText = document.createTextNode(quote.text);
 				quoteParagraph.removeChild(quoteParagraph.childNodes[0]);
 				quoteParagraph.appendChild(quoteText);
@@ -59,16 +58,15 @@ function showQuotes () {
 			setTimeout(getNewQuote, 1000);
 		}
 	}
+}
 
-	function addQuote () {
-		let quoteText = document.getElementById("quotetext").value;
-		// encodeURIComponent om UTF-8 te gebruiken en speciale karakters om te zetten naar code
-		let information = "quote=" + encodeURIComponent(quoteText);
-		newQuoteRequest.open("POST", "ManageQuoteServlet", true);
-		// belangrijk dat dit gezet wordt anders kan de servlet de informatie niet interpreteren!!!
-		// protocol header information
-		newQuoteRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-		newQuoteRequest.send(information);
-	}
-
+function addQuote () {
+	let quoteText = document.getElementById("quotetext").value;
+	// encodeURIComponent om UTF-8 te gebruiken en speciale karakters om te zetten naar code
+	let information = "quote=" + encodeURIComponent(quoteText);
+	newQuoteRequest.open("POST", "ManageQuoteServlet", true);
+	// belangrijk dat dit gezet wordt anders kan de servlet de informatie niet interpreteren!!!
+	// protocol header information
+	newQuoteRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+	newQuoteRequest.send(information);
 }
