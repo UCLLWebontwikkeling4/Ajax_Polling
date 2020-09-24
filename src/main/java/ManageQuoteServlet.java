@@ -31,7 +31,7 @@ public class ManageQuoteServlet extends HttpServlet {
 		quoteRepository.addQuote(quote);
 	}
 
-	public String toJSON (Quote quote) throws JsonProcessingException {
+	private String toJSON (Quote quote) throws JsonProcessingException {
 		ObjectMapper mapper = new ObjectMapper();
 		return mapper.writeValueAsString(quote);
 	}

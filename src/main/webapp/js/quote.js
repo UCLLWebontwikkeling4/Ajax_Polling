@@ -43,15 +43,13 @@ function showQuotes () {
 
 			let quoteDiv = document.getElementById("quote");
 			let quoteParagraph = quoteDiv.childNodes[0];
+			let quoteText = document.createTextNode(quote.text); // kan ook quote["text"]
 
 			if (quoteParagraph == null) {
 				quoteParagraph = document.createElement('p');
-				quoteParagraph.id = "quoteText";
-				let quoteText = document.createTextNode(quote.text); // kan ook quote["text"]
 				quoteParagraph.appendChild(quoteText);
 				quoteDiv.appendChild(quoteParagraph);
 			} else {
-				let quoteText = document.createTextNode(quote.text);
 				quoteParagraph.removeChild(quoteParagraph.childNodes[0]);
 				quoteParagraph.appendChild(quoteText);
 			}
