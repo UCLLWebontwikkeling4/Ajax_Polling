@@ -2,7 +2,7 @@ window.onload = getNewQuote;
 
 let quotebutton = document.getElementById('quotebutton');
 quotebutton.onclick = addQuote;
-// mag NIET addNewQuote zijn hier
+// mag NIET addQuote() zijn hier
 // anders wordt het maar 1 keer uitgevoerd, namelijk na het laden van de html pagina
 // en het moet telkens wanneer er op de button wordt gedrukt uitgevoerd worden
 
